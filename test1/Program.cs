@@ -10,8 +10,8 @@ namespace test1
     {
         static void Main(string[] args)
         {
-            Unite Diana = new Unite("Diana", 15, 10, Frashon.Goodness, 100);
-            Unite Kosty = new Unite("Kosty", 25, 5, Frashon.Evile, 100);
+            Unite Diana = new Unite("Diana", 15, 10, Faction.Goodness, 100);
+            Unite Kosty = new Unite("Kosty", 25, 5, Faction.Evile, 100);
             for (int i = 0; i < 10; i++)
             {
                 Diana.Attak(Kosty);
@@ -22,6 +22,9 @@ namespace test1
                 }
 
             }
+
+
+
         }
     }
 }

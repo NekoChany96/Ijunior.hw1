@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace test1
 {
-    enum Frashon
+    enum Faction
     {
         Goodness, 
         Evile,
@@ -19,20 +19,20 @@ namespace test1
         string name;
         double damage;
         double armor;
-        Frashon frashon;
+        Faction faction;
         bool isBerserk;
         int hp;
         int uniteHp;
         bool isLive;
 
-        public Unite(string name, int damage, int armor, Frashon frashon, int hp)
+        public Unite(string name, int damage, int armor, Faction frashon, int hp)
         {
             this.name = name;
             this.hp = hp;
             uniteHp = hp;
             this.damage = damage;
             this.armor = armor;
-            this.frashon = frashon;
+            this.faction = frashon;
             isLive = true;
         }
 
@@ -71,11 +71,11 @@ namespace test1
             }
 
             //Сначала проверяем не принадлежим ли мы к Нитралетету
-            if (frashon == Frashon.Netralitet || Vrag.frashon == Frashon.Netralitet)
+            if (faction == Faction.Netralitet || Vrag.faction == Faction.Netralitet)
             {
                 
             }
-            else if (frashon == Vrag.frashon)
+            else if (faction == Vrag.faction)
             {
                 atackDamage = atackDamage / 2;
             }
