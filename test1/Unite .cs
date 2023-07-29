@@ -12,7 +12,7 @@ namespace test1
     {
         Goodness, 
         Evile,
-        Netralitet
+        Neutrality
     }
     internal class Unite
     {
@@ -71,7 +71,7 @@ namespace test1
             }
 
             //Сначала проверяем не принадлежим ли мы к Нитралетету
-            if (faction == Faction.Netralitet || Vrag.faction == Faction.Netralitet)
+            if (faction == Faction.Neutrality || Vrag.faction == Faction.Neutrality)
             {
                 
             }
@@ -86,8 +86,6 @@ namespace test1
 
             Console.WriteLine($"Персонаж {name} нанес {atackDamage} урон персонажу {Vrag.name}");
             Vrag.Armor(atackDamage);
-
-
 
         }
         public void Armor(double damage)
