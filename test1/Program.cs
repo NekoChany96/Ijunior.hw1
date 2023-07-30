@@ -10,13 +10,14 @@ namespace test1
     {
         static void Main(string[] args)
         {
-            Unite unite1 = new Unite("unite1", 15, 10, Faction.Goodness, 100);
-            Unite unite2 = new Unite("unite2", 25, 5, Faction.Evile, 100);
-            for (int i = 0; i < 10; i++)
+            Unit unit1 = new Unit("unite1", 15, 10, Faction.Goodness, 100);
+            Unit unit2 = new Unit("unite2", 25, 5, Faction.Evile, 100);
+            int countAttack = 10;
+            for (int i = 0; i < countAttack; i++)
             {
-                unite1.Attak(unite2);
-                unite2.Attak(unite1);
-                if (!unite1.IsLive() || !unite2.IsLive())
+                unit1.Attack(unit2);
+                unit2.Attack(unit1);
+                if (!unit1.IsLive || !unit2.IsLive)
                 {
                     break;
                 }
