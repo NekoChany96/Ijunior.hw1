@@ -20,9 +20,8 @@ namespace test1
         private double _damage;
         private double _armor;
         private Faction _faction;
-        private bool _isBerserk;
         private int _hp;
-        private int _uniteHp;
+        private int _unitHp;
         public bool IsLive { get; private set; }
 
 
@@ -30,7 +29,7 @@ namespace test1
         {
             _name = name;
             _hp = hp; 
-            _uniteHp = hp;
+            _unitHp = hp;
             _damage = damage;
             _armor = armor;
             _faction = frashon;
@@ -43,18 +42,7 @@ namespace test1
 
         private bool IsBerserk()
         {
-            if (_hp <= _uniteHp / 2)
-            {
-                _isBerserk = true;
-                
-            }
-            else
-            {
-                _isBerserk = false;
-                
-            }
-
-            return _isBerserk;
+            return _hp <= _unitHp;
         }
 
         public void Attack(Unit Enemy)
@@ -68,7 +56,6 @@ namespace test1
                
             }
 
-            //Сначала проверяем не принадлежим ли мы к Нитралетету
             if (_faction != Faction.Neutrality || Enemy._faction != Faction.Neutrality)
             {
                 if (_faction == Enemy._faction)
