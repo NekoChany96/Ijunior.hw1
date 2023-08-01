@@ -34,6 +34,10 @@ namespace Hw3
             return Cards[random.Next(Cards.Count)];
         }
 
+        public void ChangeSelectCard(int numberChangeCard)
+        {
+            Cards[numberChangeCard] = new Card();
+        }
 
 
 

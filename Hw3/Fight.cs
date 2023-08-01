@@ -14,20 +14,39 @@ namespace Hw3
 
         private Card ChoiceCard(Player player)
         {
-            int indexcard = 0;
-            Console.WriteLine($"Игрок {player.Name} выбери карту из списка:");
+            
 
-            foreach (var card in player.Cards)
+            PrintPlayerCard(player);
+            Console.WriteLine($"Игрок {player.Name} юудем менять карту?");
+            Console.WriteLine($"0 - нет или укажи номер карты, которую будем менять");
+
+            int answer = int.Parse(Console.ReadLine());
+
+            if (answer != 0)
             {
-                indexcard++;
-                Console.WriteLine($"{indexcard} --> {card.Name},{card.Power},{card.Element},{card.Moral},{card.Ethic}" );
+                player.ChangeSelectCard(answer - 1);
+                PrintPlayerCard(player );
+
             }
-
+            Console.Write($"Игрок {player.Name} выбери карту: ");
             int indexSelectCard = int.Parse(Console.ReadLine()) - 1;
-
             return player.Cards[indexSelectCard];
         }
 
+        private void PrintPlayerCard(Player player)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Игрок {player.Name} вот ваши карты:");
+            
+            int indexcard = 0;
+            
+            foreach (var card in player.Cards)
+            {
+                indexcard++;
+                Console.WriteLine($"{indexcard} --> {card.Name},{card.Power},{card.Element},{card.Moral},{card.Ethic}");
+            }
+            Console.WriteLine();
+        }
         public bool Attack(Player player1, Player AI)
         {
             bool result = false;
