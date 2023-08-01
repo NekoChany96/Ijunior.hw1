@@ -16,7 +16,7 @@ namespace Hw3
             Fight fight = new Fight();
 
            while (true)
-            {
+           {
                 if (!fight.Attack(Diana, AI))
                 {
                     Console.WriteLine($"Игрок {Diana.Name} проиграл :(");
@@ -27,7 +27,7 @@ namespace Hw3
                 {
                     Console.WriteLine($"Игрок {Diana.Name} победили, игра продолжается!");
                 }
-            }
+           }
 
         }
     }

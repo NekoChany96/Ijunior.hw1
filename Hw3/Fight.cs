@@ -76,7 +76,15 @@ namespace Hw3
                     result = true;
                 }
             }
+            else if (playerCard.Power > aiCard.Power)
+            {
+                result = true;
+            }
            
+            
+            Console.WriteLine($" Сила вашей карты равна {playerCard.Power}, а стихия {playerCard.Element} ");
+            Console.WriteLine($" У противника сила карты равна {aiCard.Power}, а стихия {aiCard.Element} ");
+            
             return result;
         }
         private int countingCardsWorldview(Card playerCard)
